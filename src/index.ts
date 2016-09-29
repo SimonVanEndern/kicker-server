@@ -1,12 +1,14 @@
-declare var require: any;
+import express = require('express');
+import http = require('http');
+var http = http.Server(app);
+import io = require('socket.io')
+var io = io(http);
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var app = express();
 
-var storage = require('./best');
+import storage = require('./best');
 
-var connection = require('./tinkerforgeconnection');
+import connection = require('./tinkerforgeconnection');
 //console.log(connection.md);
 
 //var bodyParser = require('body-parser')

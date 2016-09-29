@@ -2,19 +2,40 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-var storage = require('./best');
+var db = require('./db');
 
 var connection = require('./tinkerforgeconnection');
 //console.log(connection.md);
 
-//var bodyParser = require('body-parser')
-//app.use( bodyParser.json() );       // to support JSON-encoded bodies
-//app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-//  extended: true
-//})); 
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+ extended: true
+})); 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-app.get('/', function(req, res){
+app.all('*', function (req, res, next) {
+  console.log(req.url);
+  next();
+});
+
+app.get('/', function(req, res) {
   res.sendFile(__dirname + '/index.html');
+});
+
+app.get('/best', function (req, res) {
+  res.send(db.getBests());
+});
+
+app.post('/save', function (req, res) {
+  var game = req.body.game;
+  res.send({status: "ok"});
+  console.log(Object.keys(req.body.game));
+  db.saveGame(game.sieger, game.verlierer, game.toreVerlierer, game.time);
 });
 
 // app.post('/goal', function (req, res) {

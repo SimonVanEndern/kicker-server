@@ -1,31 +1,67 @@
 {
-  "posts": [
+  "spiele": [
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Simon",
+      "verlierer": "Patrick",
+      "timestamp": 1475178801639
     },
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Patrick",
+      "verlierer": "Patrick",
+      "timestamp": 1475178879771
     },
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Simon",
+      "verlierer": "Patrick",
+      "timestamp": 1475178907580
     },
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Patrick",
+      "verlierer": "Patrick",
+      "timestamp": 1475179313044
     },
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Simon",
+      "verlierer": "Patrick",
+      "timestamp": 1475179332785
     },
     {
-      "id": 1,
-      "title": "lowdb is awesome"
+      "sieger": "Simon",
+      "verlierer": "Simon",
+      "timestamp": 1475179434131
+    },
+    {
+      "sieger": "Thomas",
+      "verlierer": "Simon",
+      "timestamp": 1475179460398
+    },
+    {
+      "sieger": "Svetoslav",
+      "verlierer": "Svetoslav",
+      "timestamp": 1475179504991
+    },
+    {
+      "sieger": "Svetoslav",
+      "verlierer": "Svetoslav",
+      "timestamp": 1475179541707
     }
   ],
-  "user": {
-    "name": "typicode"
-  }
+  "beste": [
+    {
+      "name": "Simon",
+      "siege": 4
+    },
+    {
+      "name": "Patrick",
+      "siege": 2
+    },
+    {
+      "name": "Svetoslav",
+      "siege": 2
+    },
+    {
+      "name": "Thomas",
+      "siege": 1
+    }
+  ]
 }
